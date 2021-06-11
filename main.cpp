@@ -1,8 +1,7 @@
-//FullyDynamicArrayCreations 
-
+// Now I create Fixed Size Array
 #include <iostream>
 struct Array{
- int *A;
+ int A[20];
  int Size;
  int length; 
 }; 
@@ -12,18 +11,7 @@ void display(struct Array arr){
   printf("\n%d",arr.A[i]);
 }
 int main() {
-  struct Array arr;
-  int n;
-  printf("Enter the Size of An Array you want to create in heap:");
-  scanf("%d",&arr.Size);
-  arr.A = new int(arr.Size);
-  arr.length=0;
-  printf("Enter the Numbers In Array:");
-  scanf("%d",&n);
-  printf("Enter the Numbers in Array:");
-  for(int i=0; i<n; i++)
-  scanf("%d",&arr.A[i]);
-  arr.length = n;
+  struct Array arr = {{1,2,3,4,5},20,5};
   display(arr);
 return  0;
 }
