@@ -1,3 +1,5 @@
+//FullyDynamicArrayCreations 
+
 #include <iostream>
 struct Array{
  int *A;
