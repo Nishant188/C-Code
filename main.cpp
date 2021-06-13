@@ -1,50 +1,25 @@
-// Deleting a value at a particular index position in the array.
+// Linear Searching Array!!
 #include <iostream>
 struct Array{
- int A[20];
+ int A[10];
  int Size;
  int length; 
 }; 
-void display(struct Array arr){
-  printf("\nAfter Deleting Elements are :/");
-  for(int i =0 ;i<arr.length;i++)
-  printf("\n%d",arr.A[i]);
+void display(struct Array arr1){
+  for(int i =0 ;i<arr1.length;i++)
+  printf("\n%d",arr1.A[i]);
 }
-void Append(struct Array *arr,int x)
-{
-  if(arr->length<arr->Size)
-    arr->A[arr->length++] = x; 
-}
-void Insert(struct Array *arr,int index,int x){
-  if(index >= 0 && index <= arr->length)
+int LinearSearch(struct Array arr1,int key){
+  for(int i=0;i<arr1.length;i++)
   {
-    for(int i =arr->length; i>index; i--)
-    {
-      arr->A[i] = arr->A[i-1]; 
-    }
-    arr->A[index] = x;
-    arr->length++;
+    if(key==arr1.A[i])
+      return i;
   }
-}
-int Delete(struct Array *arr,int index){
-  int n=0;
-  if(index>=0 && index <= arr->length){
-    n = arr->A[index];
-    for(int i = index; i<arr->length-1; i++)
-    {
-      arr->A[i] = arr ->A[i+1];
-    }
-    arr->length--;
-    return n;
-  }
-  return 0;
+  return -1;
 }
 int main() {
-  struct Array arr1 = {{1,2,3,4,5},20,5};
-  // Append(&arr,10);
-  // Insert(&arr,4,15);
-  // Delete(&arr1,3);
-  printf("\n%d",Delete(&arr1,0));
+  struct Array arr1 = {{12,34,45,23,76,89,74,78},10,8};
+  printf("Found At INDEX : %d",LinearSearch(arr1,2));
   display(arr1);
 return  0;
 }
