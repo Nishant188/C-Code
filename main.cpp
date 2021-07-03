@@ -20,8 +20,8 @@ int LinearSearch(struct Array *arr1,int key){
   {
     if(key==arr1->A[i])
     {
-      // swap(&arr1->A[i], &arr1->A[i-1]); //Transpostion
-      swap(&arr1->A[i], &arr1->A[0]);//Move to front/Head
+      swap(&arr1->A[i], &arr1->A[i-1]); //Transpostion
+      //swap(&arr1->A[i], &arr1->A[0]);//Move to front/Head
       return i-1;
     }
   }
